@@ -6,8 +6,9 @@ for (let i = 0; i < selectButton.length; i++) {
         const playerIndividual = playersName[i].innerText;
         const playerList = document.getElementById('player-list');
         if (playerList.childNodes.length < 5) {
-            let newPlayer = document.createElement('li');
+            const newPlayer = document.createElement('li');
             newPlayer.textContent = playerIndividual;
+            newPlayer.style.margin = '20px';
             playerList.appendChild(newPlayer);
             selectButton[i].disabled = true;
         }else{
@@ -40,11 +41,24 @@ function calculateTotal() {
 
 document.getElementById('calculate-btn').addEventListener('click', function () {
     const previousExpense = document.getElementById('previous-expense');
-    previousExpense.innerText = calculateExpense();
+    const perPlayerCostField = getInputValueById('player-cost');
+    const playerList = document.getElementById('player-list');
+    if(playerList.childNodes.length === 0){
+        alert('Please Select atleast One Player');
+    }
+    if (perPlayerCostField === ''){
+        alert('Please Enter an amount');
+    }
+    previousExpense.innerText = calculateExpense();  
 })
 
 document.getElementById('total-button').addEventListener('click', function () {
     const previousTotalCost = document.getElementById('total-expense');
+    const managerCostField = getInputValueById('manager-cost');
+    const coachCostField = getInputValueById('coach-cost');
+    if(managerCostField === '' || coachCostField === ''){
+        alert('Please Enter an amount');
+    }
     previousTotalCost.innerText = calculateTotal();
 })
 

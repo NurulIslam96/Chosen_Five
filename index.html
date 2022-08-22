@@ -7,22 +7,24 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Let's Select the Best</title>
     <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Manual Style -->
     <style>
         button:disabled {
             background: #dddddd;
         }
+        body{
+           background-color: #181414 ; 
+        }
     </style>
 </head>
 
-<body class="bg-neutral-900">
+<body>
     <header>
         <div class="relative">
             <img src="/images/head-banner.png" />
             <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-center">
-                <h1 class="text-6xl text-red-600 font-bold italic">Select Your Best Five</h1>
-                <p class="text-white mt-5">Lorem ipsum dolor sit amet consectetur adipisicing elit. Exercitationem iusto
-                    cum impedit voluptate at numquam repellat maxime, atque excepturi inventore culpa dolorum unde magni
-                    consectetur nesciunt perspiciatis quia ipsam ut.</p>
+                <h1 class="text-6xl text-red-600 font-bold italic">Let's Play With Choosen Five</h1>
+                <p class="text-white mt-5">With FIFA, sometimes it's best to just dive right in. You don't want to necessarily go through all the effort of compiling all the superstars in FIFA Ultimate Team, you don't want to start crunching numbers and stare at stat screen all evening - no, you just want to play..</p>
             </div>
         </div>
     </header>
@@ -33,21 +35,21 @@
                     <img src="/images/messi.png" class="w-100">
                     <div class="flex flex-col items-center">
                         <h1 class="text-xl my-2 text-white font-bold player-name">Lionel Messi</h1>
-                        <button class="bg-blue-500 w-3/5 py-2  text-xl text-white select-btn">Select</button>
+                        <button class="bg-blue-500 w-3/5 py-2  text-xl text-white select-btn hover:bg-blue-800">Select</button>
                     </div>
                 </div>
                 <div class="pb-4 bg-black">
                     <img src="/images/neymar.png" class="w-100">
                     <div class="flex flex-col items-center">
                         <h1 class="text-xl my-2 text-white font-bold player-name">Neymar Jr</h1>
-                        <button class="bg-blue-500 w-3/5 py-2  text-xl text-white select-btn">Select</button>
+                        <button class="bg-blue-500 w-3/5 py-2  text-xl text-white select-btn hover:bg-blue-800">Select</button>
                     </div>
                 </div>
                 <div class="pb-4 bg-black">
                     <img src="/images/kylian.png" class="w-100">
                     <div class="flex flex-col items-center">
                         <h1 class="text-xl my-2 text-white font-bold player-name">Kylian Mbappé</h1>
-                        <button class="bg-blue-500 w-3/5 py-2  text-xl text-white select-btn">Select</button>
+                        <button class="bg-blue-500 w-3/5 py-2  text-xl text-white select-btn hover:bg-blue-800">Select</button>
                     </div>
                 </div>
                 <div class="bg-black px-5">
@@ -60,40 +62,40 @@
                     <img src="/images/vitor.png" class="w-100">
                     <div class="flex flex-col items-center">
                         <h1 class="text-xl my-2 text-white font-bold player-name">Vítor Machado</h1>
-                        <button class="bg-blue-500 w-3/5 py-2  text-xl text-white select-btn">Select</button>
+                        <button class="bg-blue-500 w-3/5 py-2  text-xl text-white select-btn hover:bg-blue-800">Select</button>
                     </div>
                 </div>
                 <div class="pb-4 bg-black">
                     <img src="/images/sergio.png" class="w-100">
                     <div class="flex flex-col items-center">
                         <h1 class="text-xl my-2 text-white font-bold player-name">Sergio Ramos</h1>
-                        <button class="bg-blue-500 w-3/5 py-2  text-xl text-white select-btn">Select</button>
+                        <button class="bg-blue-500 w-3/5 py-2  text-xl text-white select-btn hover:bg-blue-800">Select</button>
                     </div>
                 </div>
                 <div class="pb-4 bg-black">
                     <img src="/images/renato.png" class="w-100">
                     <div class="flex flex-col items-center">
                         <h1 class="text-xl my-2 text-white font-bold player-name">Renato Sanches</h1>
-                        <button class="bg-blue-500 w-3/5 py-2  text-xl text-white select-btn">Select</button>
+                        <button class="bg-blue-500 w-3/5 py-2  text-xl text-white select-btn hover:bg-blue-800">Select</button>
                     </div>
                 </div>
                 <div class="row-span-2 bg-black">
                     <div class="grid grid-cols-2 px-5">
                         <h1 class="col-span-2 text-center text-3xl font-bold my-20 text-white">Budget</h1>
                         <h3 class="text-white text-xl">PerPlayer</h3>
-                        <input type="text" class="text-2xl w-3/5 text-center mx-10 items-end" placeholder="1000"
+                        <input type="text" class="text-2xl w-3/5 text-center mx-10 items-end" placeholder="Amount"
                             id="player-cost">
-                        <button class="col-span-2 bg-blue-500 w-full my-10 py-2 text-xl text-white items-center"
+                        <button class="col-span-2 bg-blue-500 w-full my-10 py-2 text-xl text-white items-center hover:bg-blue-800"
                             id="calculate-btn">Calculate</button>
                         <h2 class="text-white text-xl mb-10">Player Expenses:</h2>
                         <h2 class="text-orange-400 text-xl text-end">$<span id="previous-expense">00</span></h2>
                         <h3 class="inline text-white text-xl">Manager</h3>
-                        <input type="text" class="text-2xl w-3/5 text-center mx-10 mb-10 items-end" placeholder="1000"
+                        <input type="text" class="text-2xl w-3/5 text-center mx-10 mb-10 items-end" placeholder="Amount"
                             id="manager-cost">
                         <h3 class="inline text-white text-xl">Coach</h3>
-                        <input type="text" class="text-2xl w-3/5 text-center mx-10 items-end" placeholder="1000" id="coach-cost">
+                        <input type="text" class="text-2xl w-3/5 text-center mx-10 items-end" placeholder="Amount" id="coach-cost">
                         <button
-                            class="col-span-2 bg-blue-500 w-full my-10 py-2  text-xl text-white items-center" id="total-button">Calculate
+                            class="col-span-2 bg-blue-500 w-full my-10 py-2  text-xl text-white items-center hover:bg-blue-800" id="total-button">Calculate
                             Total</button>
                         <h2 class="text-white text-xl">Total:</h2>
                         <h2 class="text-orange-400 text-xl text-end">$<span id="total-expense">00</span></h2>
@@ -103,21 +105,21 @@
                     <img src="/images/dimaria.jpg" class="w-100">
                     <div class="flex flex-col items-center">
                         <h1 class="text-xl my-2 text-white font-bold player-name">Ángel Di María</h1>
-                        <button class="bg-blue-500 w-3/5 py-2  text-xl text-white select-btn">Select</button>
+                        <button class="bg-blue-500 w-3/5 py-2  text-xl text-white select-btn hover:bg-blue-800">Select</button>
                     </div>
                 </div>
                 <div class="pb-4 bg-black">
                     <img src="/images/ronaldo.jpg" class="w-100">
                     <div class="flex flex-col items-center">
                         <h1 class="text-xl my-2 text-white font-bold player-name">Cristiano Ronaldo</h1>
-                        <button class="bg-blue-500 w-3/5 py-2  text-xl text-white select-btn">Select</button>
+                        <button class="bg-blue-500 w-3/5 py-2  text-xl text-white select-btn hover:bg-blue-800">Select</button>
                     </div>
                 </div>
                 <div class="pb-4 bg-black">
-                    <img src="/images/superman.jpg" class="w-100">
+                    <img src="/images/karim.jpg" class="w-100">
                     <div class="flex flex-col items-center">
-                        <h1 class="text-xl my-2 text-white font-bold player-name">Superman</h1>
-                        <button class="bg-blue-500 w-3/5 py-2  text-xl text-white select-btn">Select</button>
+                        <h1 class="text-xl my-2 text-white font-bold player-name">Karim Benzema</h1>
+                        <button class="bg-blue-500 w-3/5 py-2  text-xl text-white select-btn hover:bg-blue-800">Select</button>
                     </div>
                 </div>
             </div>
