@@ -81,21 +81,22 @@
                     <div class="grid grid-cols-2 px-5">
                         <h1 class="col-span-2 text-center text-3xl font-bold my-20 text-white">Budget</h1>
                         <h3 class="text-white text-xl">PerPlayer</h3>
-                        <input type="text" class="text-2xl w-3/5 text-center mx-10 items-end" placeholder="1000" id="">
-                        <button
-                            class="col-span-2 bg-blue-500 w-full my-10 py-2 text-xl text-white items-center">Calculate</button>
+                        <input type="text" class="text-2xl w-3/5 text-center mx-10 items-end" placeholder="1000"
+                            id="player-cost">
+                        <button class="col-span-2 bg-blue-500 w-full my-10 py-2 text-xl text-white items-center"
+                            id="calculate-btn">Calculate</button>
                         <h2 class="text-white text-xl mb-10">Player Expenses:</h2>
-                        <h2 class="text-orange-400 text-xl text-end">$<span id="player-expense">00</span></h2>
+                        <h2 class="text-orange-400 text-xl text-end">$<span id="previous-expense">00</span></h2>
                         <h3 class="inline text-white text-xl">Manager</h3>
                         <input type="text" class="text-2xl w-3/5 text-center mx-10 mb-10 items-end" placeholder="1000"
-                            id="">
+                            id="manager-cost">
                         <h3 class="inline text-white text-xl">Coach</h3>
-                        <input type="text" class="text-2xl w-3/5 text-center mx-10 items-end" placeholder="1000" id="">
+                        <input type="text" class="text-2xl w-3/5 text-center mx-10 items-end" placeholder="1000" id="coach-cost">
                         <button
-                            class="col-span-2 bg-blue-500 w-full my-10 py-2  text-xl text-white items-center">Calculate
+                            class="col-span-2 bg-blue-500 w-full my-10 py-2  text-xl text-white items-center" id="total-button">Calculate
                             Total</button>
                         <h2 class="text-white text-xl">Total:</h2>
-                        <h2 class="text-orange-400 text-xl text-end">$<span>00</span></h2>
+                        <h2 class="text-orange-400 text-xl text-end">$<span id="total-expense">00</span></h2>
                     </div>
                 </div>
                 <div class="pb-4 bg-black">
