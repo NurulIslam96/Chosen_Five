@@ -7,6 +7,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Let's Select the Best</title>
     <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        button:disabled {
+            background: #dddddd;
+        }
+    </style>
 </head>
 
 <body class="bg-neutral-900">
@@ -23,68 +28,64 @@
     </header>
     <main>
         <section class="container mx-auto mt-20">
-            <div class="grid grid-cols-4 gap-4 ">
+            <div class="grid grid-cols-4 gap-4">
                 <div class="pb-4 bg-black">
                     <img src="/images/messi.png" class="w-100">
                     <div class="flex flex-col items-center">
-                        <h1 class="text-xl my-2 text-white font-bold">Lionel Messi</h1>
-                        <button class="bg-blue-500 w-3/5 py-2  text-xl text-white">Select</button>
+                        <h1 class="text-xl my-2 text-white font-bold player-name">Lionel Messi</h1>
+                        <button class="bg-blue-500 w-3/5 py-2  text-xl text-white select-btn">Select</button>
                     </div>
                 </div>
                 <div class="pb-4 bg-black">
                     <img src="/images/neymar.png" class="w-100">
                     <div class="flex flex-col items-center">
-                        <h1 class="text-xl my-2 text-white font-bold">Neymar Jr</h1>
-                        <button class="bg-blue-500 w-3/5 py-2  text-xl text-white">Select</button>
+                        <h1 class="text-xl my-2 text-white font-bold player-name">Neymar Jr</h1>
+                        <button class="bg-blue-500 w-3/5 py-2  text-xl text-white select-btn">Select</button>
                     </div>
                 </div>
                 <div class="pb-4 bg-black">
                     <img src="/images/kylian.png" class="w-100">
                     <div class="flex flex-col items-center">
-                        <h1 class="text-xl my-2 text-white font-bold">Kylian Mbappé</h1>
-                        <button class="bg-blue-500 w-3/5 py-2  text-xl text-white">Select</button>
+                        <h1 class="text-xl my-2 text-white font-bold player-name">Kylian Mbappé</h1>
+                        <button class="bg-blue-500 w-3/5 py-2  text-xl text-white select-btn">Select</button>
                     </div>
                 </div>
                 <div class="bg-black px-5">
                     <div class="pb-4">
                         <h1 class="text-4xl text-white text-center my-5">Selected - V</h1>
-                        <ul class="text-white mt-10">
-                            <li class="py-2 text-xl font-bold">1. <span></span></li>
-                            <li class="py-2 text-xl font-bold">2. <span></span></li>
-                            <li class="py-2 text-xl font-bold">3. <span></span></li>
-                            <li class="py-2 text-xl font-bold">4. <span></span></li>
-                            <li class="py-2 text-xl font-bold">5. <span></span></li>
-                        </ul>
+                        <ul class="text-white mt-10 ml-5 text-2xl list-decimal" id="player-list"></ul>
                     </div>
                 </div>
                 <div class="pb-4 bg-black">
                     <img src="/images/vitor.png" class="w-100">
                     <div class="flex flex-col items-center">
-                        <h1 class="text-xl my-2 text-white font-bold">Vítor Machado</h1>
-                        <button class="bg-blue-500 w-3/5 py-2  text-xl text-white">Select</button>
+                        <h1 class="text-xl my-2 text-white font-bold player-name">Vítor Machado</h1>
+                        <button class="bg-blue-500 w-3/5 py-2  text-xl text-white select-btn">Select</button>
                     </div>
                 </div>
                 <div class="pb-4 bg-black">
                     <img src="/images/sergio.png" class="w-100">
                     <div class="flex flex-col items-center">
-                        <h1 class="text-xl my-2 text-white font-bold">Sergio Ramos</h1>
-                        <button class="bg-blue-500 w-3/5 py-2  text-xl text-white">Select</button>
+                        <h1 class="text-xl my-2 text-white font-bold player-name">Sergio Ramos</h1>
+                        <button class="bg-blue-500 w-3/5 py-2  text-xl text-white select-btn">Select</button>
                     </div>
                 </div>
                 <div class="pb-4 bg-black">
                     <img src="/images/renato.png" class="w-100">
                     <div class="flex flex-col items-center">
-                        <h1 class="text-xl my-2 text-white font-bold">Renato Sanches</h1>
-                        <button class="bg-blue-500 w-3/5 py-2  text-xl text-white">Select</button>
+                        <h1 class="text-xl my-2 text-white font-bold player-name">Renato Sanches</h1>
+                        <button class="bg-blue-500 w-3/5 py-2  text-xl text-white select-btn">Select</button>
                     </div>
                 </div>
-                <div class="row-span-2 bg-black h-5/6">
+                <div class="row-span-2 bg-black">
                     <div class="grid grid-cols-2 px-5">
                         <h1 class="col-span-2 text-center text-3xl font-bold my-20 text-white">Budget</h1>
                         <h3 class="text-white text-xl">PerPlayer</h3>
                         <input type="text" class="text-2xl w-3/5 text-center mx-10 items-end" placeholder="1000" id="">
                         <button
                             class="col-span-2 bg-blue-500 w-full my-10 py-2 text-xl text-white items-center">Calculate</button>
+                        <h2 class="text-white text-xl mb-10">Player Expenses:</h2>
+                        <h2 class="text-orange-400 text-xl text-end">$<span id="player-expense">00</span></h2>
                         <h3 class="inline text-white text-xl">Manager</h3>
                         <input type="text" class="text-2xl w-3/5 text-center mx-10 mb-10 items-end" placeholder="1000"
                             id="">
@@ -93,29 +94,29 @@
                         <button
                             class="col-span-2 bg-blue-500 w-full my-10 py-2  text-xl text-white items-center">Calculate
                             Total</button>
-                        <h2 class="text-white">Total:</h2>
-                        <h2 class="text-orange-400 text-end">$<span>00</span></h2>
+                        <h2 class="text-white text-xl">Total:</h2>
+                        <h2 class="text-orange-400 text-xl text-end">$<span>00</span></h2>
                     </div>
                 </div>
                 <div class="pb-4 bg-black">
                     <img src="/images/dimaria.jpg" class="w-100">
                     <div class="flex flex-col items-center">
-                        <h1 class="text-xl my-2 text-white font-bold">Ángel Di María</h1>
-                        <button class="bg-blue-500 w-3/5 py-2  text-xl text-white">Select</button>
+                        <h1 class="text-xl my-2 text-white font-bold player-name">Ángel Di María</h1>
+                        <button class="bg-blue-500 w-3/5 py-2  text-xl text-white select-btn">Select</button>
                     </div>
                 </div>
                 <div class="pb-4 bg-black">
                     <img src="/images/ronaldo.jpg" class="w-100">
                     <div class="flex flex-col items-center">
-                        <h1 class="text-xl my-2 text-white font-bold">Cristiano Ronaldo</h1>
-                        <button class="bg-blue-500 w-3/5 py-2  text-xl text-white">Select</button>
+                        <h1 class="text-xl my-2 text-white font-bold player-name">Cristiano Ronaldo</h1>
+                        <button class="bg-blue-500 w-3/5 py-2  text-xl text-white select-btn">Select</button>
                     </div>
                 </div>
                 <div class="pb-4 bg-black">
                     <img src="/images/superman.jpg" class="w-100">
                     <div class="flex flex-col items-center">
-                        <h1 class="text-xl my-2 text-white font-bold">Superman</h1>
-                        <button class="bg-blue-500 w-3/5 py-2  text-xl text-white">Select</button>
+                        <h1 class="text-xl my-2 text-white font-bold player-name">Superman</h1>
+                        <button class="bg-blue-500 w-3/5 py-2  text-xl text-white select-btn">Select</button>
                     </div>
                 </div>
             </div>
