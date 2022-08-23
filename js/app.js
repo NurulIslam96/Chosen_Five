@@ -37,40 +37,35 @@ function calculateTotal() {
     return totalCost;
 }
 
-//calculate expense button
-
+//calculate Expense Button
 document.getElementById('calculate-btn').addEventListener('click', function () {
     const previousExpense = document.getElementById('previous-expense');
     const perPlayerCostField = getInputValueById('player-cost');
     const playerList = document.getElementById('player-list');
     if(playerList.childNodes.length === 0){
         alert('Please Select atleast One Player');
-    }
-    if (perPlayerCostField === ''){
-        alert('Please Enter an amount');
+    }else if (perPlayerCostField === '' || perPlayerCostField < 0){
+        alert('Please Enter a Valid Amount');
     }
     previousExpense.innerText = calculateExpense();  
+    if(previousExpense.innerText === 'NaN'){
+        alert('Please Enter a Valid Amount')
+        previousExpense.innerText = '00';
+    }
 })
-
+//Calculate Total Button
 document.getElementById('total-button').addEventListener('click', function () {
     const previousTotalCost = document.getElementById('total-expense');
     const managerCostField = getInputValueById('manager-cost');
     const coachCostField = getInputValueById('coach-cost');
-    if(managerCostField === '' || coachCostField === ''){
-        alert('Please Enter an amount');
+    if(managerCostField === '' || coachCostField === '' || managerCostField < 0 || coachCostField < 0){
+        alert('Please Enter a Valid Amount');
+        previousTotalCost.innerText = '00';
+        return;
     }
     previousTotalCost.innerText = calculateTotal();
+    if(previousTotalCost.innerText === 'NaN'){
+        alert('Please Enter a Valid Amount')
+        previousTotalCost.innerText = '00';
+    }
 })
-
-
-
-
-
-
-
-
-
-
-
-
-
